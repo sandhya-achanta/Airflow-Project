@@ -34,7 +34,6 @@ sqoop job -exec activity_log
 
 
 # autoating user_report table
-  hive -d --database user_active_dump
 hive -e "insert OVERWRITE TABLE user_active_dump.user_report
 SELECT user.id as user_id, 
 CASE WHEN s1.totinserts > 0 then s1.totinserts else 0 END as total_inserts,
