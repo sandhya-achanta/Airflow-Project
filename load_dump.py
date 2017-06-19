@@ -8,14 +8,7 @@ default_args = {
     'retry_delay': timedelta(minutes=5)
 }
 
-#dag = DAG('load_test', default_args=default_args)
-
-
 dag = DAG('load_test',schedule_interval=timedelta(minutes=60),default_args=default_args)
-
-
-
-
 load_job = """sh load.sh"""
 
 # Importing the incremental data from Mysql table to HDFS
