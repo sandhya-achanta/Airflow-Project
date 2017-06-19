@@ -4,7 +4,6 @@ for file in  $(find . -type f -name "user_upload_dump.*")
 do
   echo "Processing $file file..."
   # take action on each file. 
-  cd /home/cloudera/
   #create directory to be process
   mkdir /root/airflow/dags/user_upload_dump_WorkInProgress
   #create directory to stage processed file 
