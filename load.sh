@@ -72,7 +72,7 @@ ON S6.user_id = user.id;"
 
    # User Total Automation
 hive -d --database user_active_dump
-hive -e "use user_active_dump;insert into user_total
+insert into user_total
 select a.ts,a.total,case when (a.total-b.difflastrun) is null then 0 else (a.total-b.difflastrun) end 
 from (SELECT from_unixtime(unix_timestamp()) as ts,count(*) as total from user) a,
 (select sum(total_users) as difflastrun from user_total 
