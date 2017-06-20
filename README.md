@@ -19,7 +19,7 @@ user_total.sh
 user_total
        task_id to genetate the  reporting_table user_total 
        
- user_report
+ user_report.sh
         steps to generate the reporting tables data for user_repor,
   user_report
        task_id to genetate the  reporting_table user_report
