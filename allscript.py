@@ -20,8 +20,18 @@ task2 = BashOperator(
         task_id= 'load_tables_import',
         bash_command='./load_tables.sh',
         dag=dag)
-# Importing the incremental data from Mysql table to HDFS
+#loading user_report table		
 task3 = BashOperator(
-        task_id= 'reporting_tables',
-        bash_command='./reporting_tables.sh',
+        task_id= 'user_report',
+        bash_command='./user_report.sh',
         dag=dag)
+		
+#loading user_total table		
+task4 = BashOperator(
+        task_id= 'user_total',
+        bash_command='./user_total.sh',
+        dag=dag)
+		
+task1.set_downstream(task3)
+task2.set_downstream(task3)		
+task2.set_downstream(task4)		
