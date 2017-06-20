@@ -1,3 +1,6 @@
+run_python_script.py: 
+     Dag created with dag_id practical_project_dag 2 task_id's data_load and csv_creation
+     
 allscript.py
     Dag with dag_id practical_exercise and  3 three task_id's - load_csvfile_import, load_tables_import , reporting_tables
 
@@ -15,5 +18,7 @@ reporting_tables.sh
         steps to generate the reporting tables data user_total and user_report,
 reporting_tables
        task_id to genetate the  reporting_tables user_total and user_report
+       
+
        
         
