@@ -13,27 +13,27 @@ dag = DAG('practical_exercise',schedule_interval=timedelta(minutes=60),default_a
 # Importing the incremental data from Mysql table to HDFS
 task1 = BashOperator(
         task_id= 'load_csvfile_import',
-        bash_command='./load_csv.sh',
+        bash_command='./root/airflow/scripts/load_csv.sh',
         dag=dag)
 # importing user_table
 task2 = BashOperator(
         task_id= 'load_user_import',
-        bash_command='./load_user.sh',
+        bash_command='./root/airflow/scripts/load_user.sh',
         dag=dag)
 #importing  activitylogtable
 task3 = BashOperator(
         task_id= 'load_active_import',
-        bash_command='./load_activitylog.sh',
+        bash_command='./root/airflow/scripts/load_activitylog.sh',
         dag=dag)
 
 # loading reporting tables
 task4 = BashOperator(
         task_id= 'user_report',
-        bash_command='./user_report.sh',
+        bash_command='./root/airflow/scripts/user_report.sh',
         dag=dag)
 task5 = BashOperator(
         task_id= 'user_total',
-        bash_command='./user_total.sh',
+        bash_command='./root/airflow/scripts/user_total.sh',
         dag=dag)
 
 
